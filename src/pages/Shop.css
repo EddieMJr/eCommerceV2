@@ -1,0 +1,39 @@
+#bookGrid {
+    padding: 2rem;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    text-align: center;
+}
+
+#covers__img {
+    height: auto;
+    width: 150px;
+    padding-bottom: 2rem;
+}
+
+#libr__h1 {
+    padding: 2rem;
+    text-align: center;
+}
+
+#gridBox_div {
+    padding: 3rem;
+    background: #1d1d1d;
+    border: #670067;
+    border-radius: 5rem;
+    flex-wrap: wrap;
+    flex: auto;
+}
+
+@media screen and (max-width: 800px){
+    #bookGrid {
+    padding: 2rem;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 50px;
+    text-align: center;
+}
+}
