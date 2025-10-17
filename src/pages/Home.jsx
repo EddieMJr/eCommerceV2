@@ -7,7 +7,7 @@ import HeroImgDos from '/meet&greet.png'
 import HeroImgTres from '/goldTicket.png'
 import comicMan from '/comicMan.webp'
 import MediaStack from '/collect.avif'
-// import  from '/media.avif'
+import Collection from '/IMG_4171.JPG'
 
 function HomePage() {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -79,14 +79,14 @@ function HomePage() {
       </section>
       <section class="about__section">
         <div class="about__text">
-          <h2 id="aboutSectHead__h2">About Us</h2>
+          <h2 id="aboutSectHead__h2">About Me</h2>
           <h3 id="aboutPHead__h3"></h3>
           <p id="aboutText__p">
-            In Homebase Health, we assist those around the state of North Carolina who need health care assistance and struggle to get the help they need. Along with that, we help educate others in said areas how they could help their neighbors who may be in those situations.
+            I built this company to help share my love of music, movies, comics, etc with the world. Through this store, im able to do that along with assisting others that are underprivilaged get the help that they need.
           </p>
         </div>
         <div class="abtIMG__div">
-            <img src="img/marscella-ling-pZjDQ1PN59A-unsplash.jpg" alt="Personal Photo" class="about__img" />
+            <img src={Collection} alt="Personal Photo" class="about__img" />
         </div>
       </section>
     </main>
