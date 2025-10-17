@@ -1,40 +1,97 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './Home.css'
 import '../pages/shared.css'
-import HeroImgUno from '/digitalLibrary.png'
+import HeroImgUno from '/digitalLib.png'
+import HeroImgDos from '/meet&greet.png'
+import HeroImgTres from '/goldTicket.png'
+import comicMan from '/comicMan.webp'
+import MediaStack from '/collect.avif'
+// import  from '/media.avif'
 
 function HomePage() {
+  const [slideIndex, setSlideIndex] = useState(0);
+  const slides = [
+    { id: 1, image: HeroImgUno },
+    { id: 2, image: HeroImgDos },
+    { id: 3, image: HeroImgTres },
+  ];
+
+  const nextSlide = () =>
+    setSlideIndex((prev) => (prev + 1) % slides.length);
+
+  const prevSlide = () =>
+    setSlideIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <>
-      <main>
-      <section id="heroImage">
-        <img src={HeroImgUno} width="100%" />
+    <main>
+      <section id="heroSlides" className="relative">
+        {slides.map((slide, i) => (
+          <div
+            key={slide.id}
+            className={`mySlides fade ${i === slideIndex ? "active" : "hidden"}`}
+          >
+            <div className="numbertext">{slide.id} / {slides.length}</div>
+            <img src={slide.image} style={{ width: "100%", borderRadius: ".33rem" }} alt={slide.caption} />
+          </div>
+        ))}
+        <button className="prev" onClick={prevSlide}>
+          &#10094;
+        </button>
+        <button className="next" onClick={nextSlide}>
+          &#10095;
+        </button>
+        <div style={{ textAlign: "right", marginRight: "2rem", marginTop: ".5rem"}}>
+          {slides.map((_, i) => (
+            <span
+              key={i}
+              className={`dot ${i === slideIndex ? "active" : ""}`}
+              onClick={() => setSlideIndex(i)}
+            />
+          ))}
+        </div>
       </section>
-      <section className="cat__section">
-        <h3 className="cathead__h3">we show what we love through what we sell, which is:</h3> 
-        <div className="music__div">
-          <p id="catTitle__p">Music</p>
-          <p id="catDesc__p">in CD & Vinyl Format</p>
+      <section class="assist__section">
+        <div class="resource__div">
+            <div class="divIMG__div">
+            <img class="sectionIMG__img" src={comicMan} alt="Customer Holding Comics" />
+            </div>
+            <h2 class="head__h2">Get Some Cool Stuff!</h2>
+            <p class="sectionTxt__p">
+              Our purpose is to help as many people as possible get the things they want, whether thats music, movies, books, etc. That's why we're so vercitile. Click the button below to start shopping.
+            </p>
+            <div class="buttons__div">
+              <button className="primaryBtn" onClick={() => window.location.href = '/shop'}>Shop!</button>
+            </div>
         </div>
-        <div className="book__div">
-          <p id="catTitle__p">Books</p>
-          <p id="catDesc__p">including comics, novels & non-fiction</p>          
-        </div>
-        <div className="movies__div">
-          <p id="catTitle__p">Movies</p>
-          <p id="catDesc__p">in DVD & VHS Format</p>          
+        <div class="mapForm__div">
+          <div class="divIMG__div">
+            <img class="sectionIMG__img" src={MediaStack} alt="One of our employee's personal libraries" />
+          </div>
+          <h2 class="head__h2">We Rely On You!</h2>
+          <p class="sectionTxt__p">
+            With alot of what we sell, it comes from donations and personal purchases for the store. You can help build our inventory as well! If you have things in your collection you don't want anymore, you can let us know on the Feedback Page & we can pick them up or you can drop them off!
+          </p>
+          <div class="buttons__div">
+              <button className="primaryBtn" onClick={() => window.location.href = '/contact'}>Contact!</button>
+          </div>
         </div>
       </section>
-      <section className="example__div">
-        <h3 className="frontGrid__h3">just <b id="colorChange">SOME</b> of what we offer:</h3> 
-        <div id="frontBookGrid">
+      <section class="about__section">
+        <div class="about__text">
+          <h2 id="aboutSectHead__h2">About Us</h2>
+          <h3 id="aboutPHead__h3"></h3>
+          <p id="aboutText__p">
+            In Homebase Health, we assist those around the state of North Carolina who need health care assistance and struggle to get the help they need. Along with that, we help educate others in said areas how they could help their neighbors who may be in those situations.
+          </p>
         </div>
-      </section> 
+        <div class="abtIMG__div">
+            <img src="img/marscella-ling-pZjDQ1PN59A-unsplash.jpg" alt="Personal Photo" class="about__img" />
+        </div>
+      </section>
     </main>
-    </>
-  )
+  );
 }
+
 
 export default HomePage

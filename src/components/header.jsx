@@ -28,7 +28,7 @@ class Header extends Component {
                     <Link to="/shop" className="nav__a" onClick={this.closeMenu}>Shop!</Link>
                     </li>
                     <li className="nav__li">
-                    <Link to="/form" className="nav__a" onClick={this.closeMenu}>Feedback Form!</Link>
+                    <Link to="/contact" className="nav__a" onClick={this.closeMenu}>Contact!</Link>
                     </li>
                 </ul>
                 <div

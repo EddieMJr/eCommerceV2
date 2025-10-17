@@ -1,96 +1,216 @@
-.cat__section {
-    padding: 4rem;
-    height: fit-content;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100vw;
-    gap: 2rem;
+#heroSlides {
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  max-width: 95%;
 }
 
-.cathead__h3 {
-    text-align: center;
-    padding-bottom: 1.5rem;
-    font-size: x-large;
-    width: 100%;
-    font-weight: bold;
+/* Each slide is hidden by default */
+.mySlides {
+  display: none;
+  position: relative;
 }
 
- .music__div {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
- }
-
- .book__div {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
- }
-
- .movies__div {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
- }
-
-#catTitle__p {
-    font-size: 3rem;
-    color: #670067;
-    font-weight: bold;
+/* The currently active slide is shown */
+.mySlides.active {
+  display: block;
 }
 
-#catDesc__p {
-    font-size: 1.5rem;
-    font-weight: bold;
- }
-
- #example__div {
-    margin-top: 20rem;
- }
-
-.frontGrid__h3 {
-    text-align: center;
-    padding-bottom: 1.5rem;
-    font-size: x-large;
-    width: 100%;
-    font-weight: bold;
+/* Fade animation */
+.fade {
+  animation: fade 1.5s;
 }
 
- #frontBookGrid {
-    padding: 2rem;
-    align-items: center;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 50px;
-    text-align: center;
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
 }
 
- #frontGridBox_div {
-    text-align: center;
-    padding: 3rem;
-    background: #1d1d1d;
-    border: #670067;
-    border-radius: 5rem;
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: .1rem;
+  user-select: none;
+  z-index: 10;
 }
 
-#covers__img {
-    height: auto;
-    width: 150px;
-    padding-bottom: 2rem;
+.prev {
+  left: 0;
+  border-radius: .1rem;
 }
 
-#libr__h1 {
-    padding: 2rem;
-    text-align: center;
+.next {
+  right: 0;
+  border-radius: .1rem;
 }
 
-#colorChange {
-    color: #670067;
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Slide count text */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Dots (indicators) */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* Map/Form & Resource Section Elements */
+.assist__section {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 2rem;
+}
+
+.mapForm__div,
+.resource__div {
+  flex: 1 1 40%;
+  background-color: #940000;
+  border-radius: 0.33rem;
+  color: #000000;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mapForm__div:hover,
+.resource__div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.sectionIMG__img {
+  width: 100%;
+  margin: 0 auto 1rem;
+  display: block;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  border-top-left-radius: 0.33rem;
+  border-top-right-radius: 0.33rem;
+}
+
+.head__h2 {
+  font-size: 2rem;
+  padding: .2rem;
+}
+
+.sectionTxt__p {
+  line-height: 1.6;
+  padding: 1.5rem;
+}
+
+.buttons__div {
+    margin-bottom: 1rem;
+}
+
+.primaryBtn {
+    border: solid .1rem #fff;
+    background-color: #400000;
+    border-radius: .33rem;
+}
+
+/* About Section Elements */
+.about__section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .1rem;
+  background-color: #400000;
+  color: #ECF8FF;
+  border-radius: 0.33rem;
+  margin: 1rem 1rem;
+  padding: 2rem;
+  border-bottom: 0.15rem solid #ECF8FF;
+}
+
+.about__text {
+  flex: 1;
+  padding: 2rem;
+}
+
+.about__text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about__text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about__text p {
+  line-height: 1.6;
+}
+
+.abtIMG__div {
+  flex: 1;
+  text-align: center;
+}
+
+.about__img {
+  width: 90%;
+  height: auto;
+  border-radius: 0.33rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about__img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
 }
 
  @media screen and (max-width: 800px){

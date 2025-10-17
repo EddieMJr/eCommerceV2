@@ -1,16 +1,29 @@
 #bookGrid {
-    padding: 2rem;
     align-items: center;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 50px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
     text-align: center;
 }
 
+#bookGrid > * {
+  flex: 1 1 calc(25% - 1rem);
+  max-width: calc(25% - 1rem);
+  min-width: none;
+}
+
+#bookGrid > * {
+  min-width: 250px; /* ensures cards don’t get too small */
+  box-sizing: border-box;
+}
+
 #covers__img {
-    height: auto;
-    width: 150px;
-    padding-bottom: 2rem;
+  max-width: 50%;
+  height: auto;
+  display: block;
+  margin: 1rem;
 }
 
 #libr__h1 {
@@ -18,22 +31,39 @@
     text-align: center;
 }
 
-#gridBox_div {
-    padding: 3rem;
-    background: #1d1d1d;
-    border: #670067;
-    border-radius: 5rem;
-    flex-wrap: wrap;
-    flex: auto;
+.itemText {
+    padding: 2rem;
 }
 
-@media screen and (max-width: 800px){
-    #bookGrid {
-    padding: 2rem;
-    align-items: center;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 50px;
-    text-align: center;
+#gridBox_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: .5rem;
+  height: 32rem;
+  min-height: 30rem;
+  width: auto;
+  background: #1d1d1d;
+  border-radius: .33rem;
 }
+
+select {
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
+
+@media screen and (max-width: 768px) {
+  #bookGrid > * {
+    flex: 1 1 calc(50% - 50px);
+    max-width: calc(50% - 50px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #bookGrid > * {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
