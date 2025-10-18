@@ -37,11 +37,12 @@ function ShopPage() {
           Product Type:
           <select value={productTypeFilter} onChange={e => setProductTypeFilter(e.target.value)}>
             <option value="">All</option>
-            <option value="Book">Book</option>
-            <option value="Comics">Comic</option>
+            <option value="Book">Books</option>
+            <option value="Comics">Comics</option>
             <option value="Manga">Manga</option>
-            <option value="DVD">DVD</option>
-            <option value="CD">CD</option>
+            <option value="DVD">DVDs</option>
+            <option value="CD">CDs</option>
+            <option value="Vinyl">Vinyls</option>
           </select>
         </label>
 
@@ -64,6 +65,7 @@ function ShopPage() {
               <div className='itemText'>
                 <p><b>{item.title}</b></p>
                 <p>{item.prodDesc}</p>
+                <p><b>{item.genre}</b></p>
                 <p><b>${item.price}</b></p>
               </div>
             </div>

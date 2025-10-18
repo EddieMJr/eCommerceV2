@@ -2,11 +2,14 @@ import React from 'react';
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import MainLogo from '/wuardoDecalBlanco.png'
-import Burger from './burgerMenu.js'
 import '../pages/shared.css'
 
 class Header extends Component {
     state = { menuOpen: false };
+
+    closeMenu = () => {
+        this.setState({ menuOpen: false });
+    };
 
     toggleMenu = () => {
         this.setState({ menuOpen: !this.state.menuOpen });

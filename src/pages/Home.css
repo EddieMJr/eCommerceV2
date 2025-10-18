@@ -1,3 +1,28 @@
+.newOffer__div {
+  background-color: #e9ce00;
+  text-align: center;
+  padding: .5rem;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: .5rem;
+}
+
+.newOffer__div p {
+  display: inline-block;
+  position: relative;
+  animation: autoScroll 13s linear infinite;
+  color: #000000; 
+}
+
+@keyframes autoScroll {
+  0% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}
+
 #heroSlides {
   margin: 0 auto;
   text-align: center;
@@ -30,7 +55,7 @@
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 45%;
   width: auto;
   margin-top: -22px;
   padding: 16px;
@@ -56,17 +81,6 @@
 .prev:hover,
 .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
 }
 
 /* Slide count text */
@@ -213,26 +227,55 @@
   box-shadow: 0 12px 25px rgba(0,0,0,0.3);
 }
 
- @media screen and (max-width: 800px){
-    .cathead__h3{
-        font-size: 1.5rem;
+ @media screen and (max-width: 768px){
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 45%;
+      width: auto;
+      margin-top: -22px;
+      padding: 10px;
+      color: white;
+      font-weight: bold;
+      font-size: 12px;
+      transition: 0.6s ease;
+      border-radius: .1rem;
+      user-select: none;
+      z-index: 10;
+      height: auto;
     }
-    #catTitle__p{
-        font-size: 2.5rem;
-        gap: 20rem;
-        column-gap: 6rem;
+
+    .dot {
+      cursor: pointer;
+      height: .7rem;
+      width: .7rem;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
     }
-    #catDesc__div{
-        gap: 6rem;
-        column-gap: 6rem;
-        font-size: 1.5rem;
+
+    .mapForm__div,
+    .resource__div {
+      flex: 1 80%;
+      background-color: #940000;
+      border-radius: 0.33rem;
+      color: #000000;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    #frontBookGrid {
-    padding: 2rem;
-    align-items: center;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 50px;
-    text-align: center;
+
+    @keyframes autoScroll {
+      0% {
+        transform: translateX(-180%);
+      }
+      100% {
+        transform: translateX(180%);
+      }
     }
 }

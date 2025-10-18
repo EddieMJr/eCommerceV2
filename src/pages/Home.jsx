@@ -25,6 +25,9 @@ function HomePage() {
 
   return (
     <main>
+      <div className='newOffer__div'>
+        <p>&#128293; NEW MUSIC SHIPMENT!! CHECK THE SHOP PAGE!! &#128293;</p>
+      </div>
       <section id="heroSlides" className="relative">
         {slides.map((slide, i) => (
           <div
