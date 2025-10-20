@@ -54,42 +54,42 @@ function HomePage() {
           ))}
         </div>
       </section>
-      <section class="assist__section">
-        <div class="resource__div">
-            <div class="divIMG__div">
-            <img class="sectionIMG__img" src={comicMan} alt="Customer Holding Comics" />
+      <section className="assist__section">
+        <div className="resource__div">
+            <div className="divIMG__div">
+            <img className="sectionIMG__img" src={comicMan} alt="Customer Holding Comics" />
             </div>
-            <h2 class="head__h2">Get Some Cool Stuff!</h2>
-            <p class="sectionTxt__p">
+            <h2 className="head__h2">Get Some Cool Stuff!</h2>
+            <p className="sectionTxt__p">
               Our purpose is to help as many people as possible get the things they want, whether thats music, movies, books, etc. That's why we're so vercitile. Click the button below to start shopping.
             </p>
-            <div class="buttons__div">
+            <div className="buttons__div">
               <button className="primaryBtn" onClick={() => window.location.href = '/shop'}>Shop!</button>
             </div>
         </div>
-        <div class="mapForm__div">
-          <div class="divIMG__div">
-            <img class="sectionIMG__img" src={MediaStack} alt="One of our employee's personal libraries" />
+        <div className="mapForm__div">
+          <div className="divIMG__div">
+            <img className="sectionIMG__img" src={MediaStack} alt="One of our employee's personal libraries" />
           </div>
-          <h2 class="head__h2">We Rely On You!</h2>
-          <p class="sectionTxt__p">
+          <h2 className="head__h2">We Rely On You!</h2>
+          <p className="sectionTxt__p">
             With alot of what we sell, it comes from donations and personal purchases for the store. You can help build our inventory as well! If you have things in your collection you don't want anymore, you can let us know on the Feedback Page & we can pick them up or you can drop them off!
           </p>
-          <div class="buttons__div">
+          <div className="buttons__div">
               <button className="primaryBtn" onClick={() => window.location.href = '/contact'}>Contact!</button>
           </div>
         </div>
       </section>
-      <section class="about__section">
-        <div class="about__text">
+      <section className="about__section">
+        <div className="about__text">
           <h2 id="aboutSectHead__h2">About Me</h2>
           <h3 id="aboutPHead__h3"></h3>
           <p id="aboutText__p">
             I built this company to help share my love of music, movies, comics, etc with the world. Through this store, im able to do that along with assisting others that are underprivilaged get the help that they need.
           </p>
         </div>
-        <div class="abtIMG__div">
-            <img src={Collection} alt="Personal Photo" class="about__img" />
+        <div className="abtIMG__div">
+            <img src={Collection} alt="Personal Photo" className="about__img" />
         </div>
       </section>
     </main>
