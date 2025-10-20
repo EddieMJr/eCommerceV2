@@ -4,6 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import mysql from 'mysql2/promise';
+import { Server } from 'http';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -61,7 +62,6 @@ app.get(/.*/, (req, res) => {
   res.sendFile(path.join(__dirname, '../dist', 'index.html'));
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
-});
+app.get('/api/test', (req, res) => res.send('✅ Backend is live!'));
+
+export default server;
