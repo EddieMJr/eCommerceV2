@@ -6,12 +6,13 @@
 
 html {
     font-family: 'Space Grotesk';
+    overflow-x: hidden
 }
 
 body {
     height: 100%;
     background-color: #0a0a0a;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     display: flex;
     flex-direction: column;
 }
@@ -151,6 +152,7 @@ a {
         visibility: hidden;
         transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
         z-index: 2000;
+        overflow-x: hidden;
     }
 
     .nav-menu.active {
