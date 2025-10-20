@@ -10,7 +10,7 @@ function ShopPage() {
 
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/shopItems')
+    fetch(`${import.meta.env.VITE_API_URL}/api/shopItems`)
       .then((res) => res.json())
       .then((data) => setItems(data))
       .catch((err) => console.error('Error fetching shop items:', err));
