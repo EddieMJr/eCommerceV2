@@ -47,6 +47,8 @@ let db;
 })();
 
 // API Routes
+app.get('/api/test', (req, res) => res.send('✅ Backend is live!'));
+
 app.get('/api/shopItems', async (req, res) => {
   try {
     const [rows] = await db.query('SELECT * FROM shopItems');
@@ -62,6 +64,5 @@ app.get(/.*/, (req, res) => {
   res.sendFile(path.join(__dirname, '../dist', 'index.html'));
 });
 
-app.get('/api/test', (req, res) => res.send('✅ Backend is live!'));
-
-export default server;
+export default app
+;
