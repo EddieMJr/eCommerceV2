@@ -2,13 +2,10 @@ import express from 'express';
 import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import dotenv from 'dotenv';
-import mysql from 'mysql2/promise';
+import db from './db.js'
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-dotenv.config({ path: path.join(__dirname, '../.env') });
 
 const app = express();
 const PORT = process.env.PORT || 10000;
@@ -17,33 +14,6 @@ const PORT = process.env.PORT || 10000;
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../dist'))); // Serve React build
-
-// Database connection pool
-let db;
-(async () => {
-  try {
-    db = await mysql.createPool({
-      host: process.env.DB_HOST,
-      user: process.env.DB_USER,
-      database: process.env.DB_NAME,
-      password: process.env.DB_PW
-    });
-
-    console.log('Loaded ENV:', {
-      host: process.env.DB_HOST,
-      user: process.env.DB_USER,
-      password: process.env.DB_PW ? '✅ (hidden)' : '❌ MISSING',
-      name: process.env.DB_NAME,
-    });
-
-    // Test connection
-    await db.query('SELECT 1');
-    console.log('✅ Connected to database');
-  } catch (err) {
-    console.error('❌ Database connection failed:', err);
-    process.exit(1);
-  }
-})();
 
 // API Routes
 app.get('/api/test', (req, res) => res.send('✅ Backend is live!'));
