@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import './Home.css'
 import '../pages/shared.css'
 import HeroImgUno from '/digitalLib.png'
@@ -26,7 +27,7 @@ function HomePage() {
   return (
     <main>
       <div className='newOffer__div'>
-        <p>&#128293; NEW MUSIC SHIPMENT!! CHECK THE SHOP PAGE!! &#128293;</p>
+        <p>&#128293; NEW MUSIC & BOOK SHIPMENT!! CHECK THE SHOP PAGE!! &#128293;</p>
       </div>
       <section id="heroSlides" className="relative">
         {slides.map((slide, i) => (
@@ -61,10 +62,11 @@ function HomePage() {
             </div>
             <h2 className="head__h2">Get Some Cool Stuff!</h2>
             <p className="sectionTxt__p">
-              Our purpose is to help as many people as possible get the things they want, whether thats music, movies, books, etc. That's why we're so vercitile. Click the button below to start shopping.
-            </p>
+              Our purpose is to help as many people as possible get the things they want, whether that's music, movies, books, etc. That's why we're so versatile. Click the button below to start shopping.            </p>
             <div className="buttons__div">
-              <button className="primaryBtn" onClick={() => window.location.href = '/shop'}>Shop!</button>
+              <button className="primaryBtn">
+                <Link to="/shop">Shop!</Link>
+              </button>
             </div>
         </div>
         <div className="mapForm__div">
@@ -73,10 +75,12 @@ function HomePage() {
           </div>
           <h2 className="head__h2">We Rely On You!</h2>
           <p className="sectionTxt__p">
-            With alot of what we sell, it comes from donations and personal purchases for the store. You can help build our inventory as well! If you have things in your collection you don't want anymore, you can let us know on the Feedback Page & we can pick them up or you can drop them off!
+            With a lot of what we sell, it comes from donations and personal purchases for the store. You can help build our inventory as well! If you have things in your collection you don't want anymore, you can let us know on the Contact Page & we can pick them up or you can drop them off!
           </p>
           <div className="buttons__div">
-              <button className="primaryBtn" onClick={() => window.location.href = '/contact'}>Contact!</button>
+              <button className="primaryBtn">
+                <Link to="/contact">Contact!</Link>
+              </button>
           </div>
         </div>
       </section>
@@ -85,8 +89,7 @@ function HomePage() {
           <h2 id="aboutSectHead__h2">About Me</h2>
           <h3 id="aboutPHead__h3"></h3>
           <p id="aboutText__p">
-            I built this company to help share my love of music, movies, comics, etc with the world. Through this store, im able to do that along with assisting others that are underprivilaged get the help that they need.
-          </p>
+          I built this company to help share my love of music, movies, comics, etc with the world. Through this store, I'm able to do that along with assisting others that are disadvantaged with whatever they may be going through with our fundraising.          </p>
         </div>
         <div className="abtIMG__div">
             <img src={Collection} alt="Personal Photo" className="about__img" />

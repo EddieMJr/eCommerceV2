@@ -1,5 +1,6 @@
 h1 {
-    padding: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 
@@ -7,10 +8,10 @@ p {
     color: #fff;
 }
 
-h3 {
+.formExplan__h3 {
     padding-bottom: 2rem;
     text-align: center;
-    margin: 0 auto;
+    margin: 1rem;
 }
 
 .input__section {
@@ -73,6 +74,15 @@ button {
     font-size: 1.3rem;
     border: .3rem solid #400000 ;
     border-radius: 1rem;
+}
+
+.validFormPopup__h3 {
+    color: #006c02;
+    text-align: center;
+    font-size: 2rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+
 }
 
 @media screen and (max-width: 768px){

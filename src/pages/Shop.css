@@ -9,13 +9,13 @@
 }
 
 #bookGrid > * {
-  flex: 1 1 calc(25% - 1rem);
-  max-width: calc(25% - 1rem);
+  flex: 1 1 calc(23% - 1rem);
+  max-width: calc(23% - 1rem);
   min-width: none;
 }
 
 #bookGrid > * {
-  min-width: 250px; /* ensures cards don’t get too small */
+  min-width: 250px;
   box-sizing: border-box;
 }
 
@@ -56,8 +56,8 @@ select {
 
 @media screen and (max-width: 768px) {
   #bookGrid > * {
-    flex: 1 1 calc(50% - 50px);
-    max-width: calc(50% - 50px);
+    flex: 1 1 calc(52% - 50px);
+    max-width: calc(52% - 50px);
   }
 }
 

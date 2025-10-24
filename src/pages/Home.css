@@ -270,6 +270,11 @@
       justify-content: space-between;
     }
 
+    .about__section {
+      flex-direction: column;
+      text-align: center;
+    }
+
     @keyframes autoScroll {
       0% {
         transform: translateX(-180%);

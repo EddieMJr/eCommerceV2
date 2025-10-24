@@ -16,6 +16,10 @@ function FormPage() {
     comment: '',
   });
 
+  // Vaild Form Text PopUp
+  const [validMessage, setValidMessage] = useState('')
+
+
   const validateForm = (e) => {
     e.preventDefault();
     let valid = true;
@@ -46,18 +50,21 @@ function FormPage() {
     setErrors(newErrors);
 
     if (valid) {
-      alert('Form submitted successfully!');
-      // Reset form (optional)
+      setValidMessage('Form submitted successfully! Thank you for your input!');
+
+      // Reset form
       setName('');
       setEmail('');
       setComment('');
+    } else {
+      setValidMessage('')
     }
   };
 
   return (
     <main>
       <h1>Any thoughts?</h1>
-      <h3>We use this page to get any feedback from our customers. Whether you're giving donations, letting us know your experience shopping or anything else, let us know!</h3>
+      <h3 className='formExplan__h3'>We use this page to get any feedback from our customers. Whether you're giving donations, letting us know your experience shopping or anything else, let us know!</h3>
       <section id="input__section">
         <form id="contact__form" onSubmit={validateForm}>
           <div id="formStyle">
@@ -104,6 +111,9 @@ function FormPage() {
 
           <button type="submit">Submit</button>
         </form>
+        {validMessage && (
+        <h3 className='validFormPopup__h3'>{validMessage}</h3>
+        )}
       </section>
     </main>
   );
