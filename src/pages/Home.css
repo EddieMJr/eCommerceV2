@@ -10,7 +10,7 @@
 .newOffer__div p {
   display: inline-block;
   position: relative;
-  animation: autoScroll 13s linear infinite;
+  animation: autoScroll 18s linear infinite;
   color: #000000; 
 }
 
@@ -30,13 +30,11 @@
   max-width: 95%;
 }
 
-/* Each slide is hidden by default */
 .mySlides {
   display: none;
   position: relative;
 }
 
-/* The currently active slide is shown */
 .mySlides.active {
   display: block;
 }

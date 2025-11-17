@@ -64,7 +64,7 @@ function FormPage() {
   return (
     <main>
       <h1>Any thoughts?</h1>
-      <h3 className='formExplan__h3'>We use this page to get any feedback from our customers. Whether you're giving donations, letting us know your experience shopping or anything else, let us know!</h3>
+      <h4 className='formExplan__h4'>We use this page to get any feedback from our customers. Whether you're giving donations, letting us know your experience shopping or anything else, let us know!</h4>
       <section id="input__section">
         <form id="contact__form" onSubmit={validateForm}>
           <div id="formStyle">
