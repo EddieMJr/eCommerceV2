@@ -1,10 +1,7 @@
 import React from 'react';
-import { Component } from 'react';
 import IG from '/insta.webp'
 
-class Footer extends Component {
-
-    render() {
+function Footer() {
         return (
             <footer>
                 <div className="footer">
@@ -29,6 +26,4 @@ class Footer extends Component {
             </footer>
         )
     }
-}
-
 export default Footer;

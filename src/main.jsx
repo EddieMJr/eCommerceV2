@@ -2,11 +2,11 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './pages/shared.css'
-import Header from './components/header.jsx'
+import Header from './components/Header.jsx'
 import HomePage from './pages/Home.jsx'
 import ShopPage from './pages/Shop.jsx'
 import FormPage from './pages/Form.jsx'
-import Footer from './components/footer.jsx'
+import Footer from './components/Footer.jsx'
 
 
 createRoot(document.getElementById('root')).render(

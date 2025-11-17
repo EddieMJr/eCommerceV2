@@ -2,12 +2,12 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import './Shop.css'
 import '../pages/shared.css'
+import ShopCard from '../components/ShopCard.jsx'
 
 function ShopPage() {
   const [items, setItems] = useState([]);
-  const [productTypeFilter, setProductTypeFilter] = useState(""); // For productType column
-  const [sortOption, setSortOption] = useState("price-asc"); // sort options
-
+  const [productTypeFilter, setProductTypeFilter] = useState("");
+  const [sortOption, setSortOption] = useState("price-asc");
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/shopItems`)
@@ -60,15 +60,7 @@ function ShopPage() {
       <main>
         <div id="bookGrid">
           {filteredSortedItems.map((item) => (
-            <div key={item.id} id="gridBox_div">
-              <img src={item.imageUrl} id="covers__img" alt={item.title} />
-              <div className='itemText'>
-                <p><b>{item.title}</b></p>
-                <p>{item.prodDesc}</p>
-                <p><b>{item.genre}</b></p>
-                <p><b>${item.price}</b></p>
-              </div>
-            </div>
+            <ShopCard key={item.id} item={item} />
           ))}
         </div>
       </main>
@@ -76,4 +68,4 @@ function ShopPage() {
   );
 }
 
-export default ShopPage
+export default ShopPage;
